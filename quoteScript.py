@@ -1,5 +1,4 @@
 import random
-import time
 
 subjects = ["You", "Your mind", "Your effort", "Success", "Happiness", "Discipline"]
 verbs = ["is", "creates", "defines", "shapes", "drives", "builds"]
@@ -14,11 +13,11 @@ def generate_quote():
     return f"{subject} {verb} {obj} {ending}"
 
 print("✨ Random Inspirational Quote Generator ✨")
-print("Press Ctrl+C to stop\n")
+print("Press Enter to get a new quote, or type 'q' to quit.\n")
 
-try:
-    while True:
-        print(generate_quote())
-        time.sleep(2)
-except KeyboardInterrupt:
-    print("\nGoodbye! 💡")
+while True:
+    user_input = input(">> ")
+    if user_input.lower() == 'q':
+        print("Goodbye! 💡")
+        break
+    print(generate_quote())
